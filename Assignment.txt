@@ -1,0 +1,43 @@
+create table AC_MAST(
+ac_type varchar(3),
+ac_no int(4),
+cust_no int(5),
+bal float(10,2),
+od_limit float(10,2),
+constraint PK_ACMAST Primary key(ac_type,ac_no));
+
+create table CUST_MAST(
+cust_no int(5) primary key,
+name varchar(50),
+add1 varchar(50),
+add2 varchar(50),
+add3 varchar(50),
+city varchar(30),
+state varchar(20));
+
+
+create table TRANS(
+ac_type varchar(3),
+ac_no int(4),
+tdate date,
+counter int(2),
+amount float(10,2),
+desp varchar(30),
+constraint PK_TRANS Primary key(ac_type,ac_no,tdate)); 
+
+create table DEPT(
+dno int(3) primary key,
+name varchar(15),
+loc varchar(20));
+
+create table EMP(
+empno int(5) primary key,
+name varchar(50),
+jdate date,
+dept int(3),
+desig varchar(20),
+basic float(10,2),
+da float(10,2),
+hra float(10,2),
+pf float(10,2),
+it float(10,2));
